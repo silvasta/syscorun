@@ -1,13 +1,17 @@
 [project]
 name = "syscorun"
 version = "0.1.0"
-description = "Add your description here"
+description = "Execution of system and control tools"
 readme = "README.md"
-authors = [
-    { name = "Silvan Stadelmann", email = "silvasta3@gmail.com" }
-]
+authors = [{ name = "Silvan Stadelmann", email = "silvasta3@gmail.com" }]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+  "loguru>=0.7.3",
+  "rich>=14.1.0",
+  "sympy>=1.14.0",
+  "sysco",
+  "syscovis",
+]
 
 [project.scripts]
 syscorun = "syscorun:main"
@@ -15,3 +19,7 @@ syscorun = "syscorun:main"
 [build-system]
 requires = ["uv_build>=0.8.6,<0.9.0"]
 build-backend = "uv_build"
+
+[tool.uv.sources]
+syscovis = { workspace = true }
+sysco = { workspace = true }
