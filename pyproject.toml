@@ -1,10 +1,13 @@
 [project]
 name = "syscorun"
-version = "0.1.0"
+classifiers = ["Development Status :: 3 - Alpha"]
+version = "0.1.1a1"
 description = "Execution of system and control tools"
+license = { text = "Apache License 2.0" }
 readme = "README.md"
 authors = [{ name = "Silvan Stadelmann", email = "silvasta3@gmail.com" }]
 requires-python = ">=3.13"
+
 dependencies = [
   "loguru>=0.7.3",
   "rich>=14.1.0",
