@@ -1,13 +1,23 @@
 [project]
 name = "syscorun"
 classifiers = ["Development Status :: 3 - Alpha"]
-version = "0.1.1a1"
+version = "0.1.1b1"
 description = "Execution of system and control tools"
+keywords = [
+  "science",
+  "engineering",
+  "education",
+  "systems",
+  "controls",
+  "controller",
+  "discrete-time",
+  "model-based",
+  "data-driven",
+]
 license = { text = "Apache License 2.0" }
 readme = "README.md"
 authors = [{ name = "Silvan Stadelmann", email = "silvasta3@gmail.com" }]
 requires-python = ">=3.13"
-
 dependencies = [
   "loguru>=0.7.3",
   "rich>=14.1.0",
@@ -15,6 +25,12 @@ dependencies = [
   "sysco",
   "syscovis",
 ]
+
+[project.urls]
+# Documentation = ""
+Repository = "https://github.com/silvasta/syscorun"
+# Issues = ""
+# Changelog = ""
 
 [project.scripts]
 syscorun = "syscorun:main"
@@ -24,5 +40,5 @@ requires = ["uv_build>=0.8.6,<0.9.0"]
 build-backend = "uv_build"
 
 [tool.uv.sources]
-syscovis = { workspace = true }
-sysco = { workspace = true }
+syscovis = { path = "../syscovis" }
+sysco = { path = "../sysco" }

@@ -1,6 +1,6 @@
 import sysco
 from syscovis import plotter
-from sysco import Controller
+from sysco import BaseController as Controller
 from loguru import logger
 
 # from rich.markdown import Markdown

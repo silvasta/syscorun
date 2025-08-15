@@ -1,4 +1,4 @@
-# System and Control runner
+# System and Control Task Runner
 
 Application that performs different System and Control tasks
 and demonstrates how `sysco` and `syscovis` work together.
@@ -25,7 +25,7 @@ uv run syscorun
 ![syscorun0-1-1a1](https://github.com/silvasta/syscorun/blob/main/doc/images/syscorun-v0-1-1a1.png?raw=true)
 
 _unfortunately I spent hours to get an html view with colors like in alacritty..._
-here the output on github:
+here is how it looks on github:
 
 <!-- <pre style="background-color: #282828; foreground-color:#f2f4f8"> -->
 <pre style="background-color: #282828;"><font face = "RobotoMono Nerd Font", color=#f2f4f8 ><font color="#BE95FF">silvan</font><font color="#33B1FF">@</font><font color="#08BDBA">omen-u2504</font><font color="#EE5396">:</font><font color="#33B1FF">~/Coding/systems-and-control-python/syscorun</font><font color="#EE5396">|</font><font color="#DFDFE0">main </font><font color="#25BE6A"></font>
