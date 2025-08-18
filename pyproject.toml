@@ -1,7 +1,7 @@
 [project]
 name = "syscorun"
 classifiers = ["Development Status :: 3 - Alpha"]
-version = "0.1.1b1"
+version = "0.1.1b2"
 description = "Execution of system and control tools"
 keywords = [
   "science",
@@ -40,5 +40,5 @@ requires = ["uv_build>=0.8.6,<0.9.0"]
 build-backend = "uv_build"
 
 [tool.uv.sources]
-syscovis = { path = "../syscovis" }
-sysco = { path = "../sysco" }
+syscovis = { path = "../syscovis", editable = true }
+sysco = { path = "../sysco", editable = true }
