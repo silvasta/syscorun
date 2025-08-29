@@ -24,3 +24,5 @@ __pycache__/
 # Environments
 # .env
 # .venv
+plots/LQR_plot_name.jpg
+plots/LQR_plot_name.svg

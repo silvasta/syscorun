@@ -1,12 +1,17 @@
 from functools import partial
 import numpy as np
 from sysco import LQR
+# from syscovis import plotter
 
 from rich.console import Console
 from rich.panel import Panel
 from rich.align import AlignMethod
+from syscovis import Plotter
 
 console = Console()
+
+
+plotter = Plotter(task_name="LQR", show=False)
 
 
 def print_cyan_panel(
@@ -68,18 +73,30 @@ x_trajcetory = []
 u_trajcetory = []
 cost_development = []
 
+print_siumulaton = False
+save_simulation = True
 for step in range(HORIZON):
-    print_step(f"start with iteration: {step}")
-    print(f"state: {x.flatten()}")
-    x_trajcetory += [x]
+    # TODO: Management for subtask selection!
+    # base task == simulation, x,u
+    # extended: J,print|save steps
+    if print_siumulaton:
+        print_step(f"start with iteration: {step}")
     J = lqr.get_optimal_cost(x)
-    print(f"cost {J}")
-    cost_development += [J]
+    if save_simulation:
+        x_trajcetory += [x]
+        cost_development += [J]
+    if print_siumulaton:
+        print(f"state: {x.flatten()}")
+        print(f"cost {J}")
     if step == HORIZON - 1:
         break
     u = lqr.get_input(x)
-    print(f"input: {u.flatten()}")
-    u_trajcetory += [u]
+    if save_simulation:
+        u_trajcetory += [u]
+    if print_siumulaton:
+        print(f"input: {u.flatten()}")
     x = apply_dynamics(A, x, B, u)
 
 # print(x_trajcetory, cost_development, u_trajcetory, sep="\n\n")
+
+plotter.plot(x_trajcetory, name="2d_trajectory")
