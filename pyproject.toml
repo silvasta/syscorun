@@ -24,6 +24,8 @@ dependencies = [
   "sympy>=1.14.0",
   "sysco",
   "syscovis",
+  "textual>=7.2.0",
+  "typer>=0.21.1",
 ]
 
 [project.urls]
@@ -33,12 +35,22 @@ Repository = "https://github.com/silvasta/syscorun"
 # Changelog = ""
 
 [project.scripts]
-syscorun = "syscorun:main"
+# TODO: remove alias
+scr = "syscorun.cli:main"
+syscorun-cli = "syscorun.cli:main"
+syscorun-tui = "syscorun.tui:main"
+tail-log = "syscorun.utils.tail_logs:main"
 
 [build-system]
 requires = ["uv_build>=0.8.6,<0.9.0"]
 build-backend = "uv_build"
 
 [tool.uv.sources]
-syscovis = { path = "../syscovis" }
-sysco = { path = "../sysco" }
+syscovis = { path = "../syscovis", editable = true }
+sysco = { path = "../sysco", editable = true }
+
+[tool.project_name.logging]
+level = "DEBUG"
+file_name = "syscorun.log"
+rotation = "1 MB"
+retention = "1 week"
